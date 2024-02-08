@@ -6,34 +6,204 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- 탭에 출력되는 타이틀 -->
         <title>네이버 요약뉴스</title>
+        <!-- CSS 인터널방식 코드 -->
+        <style>
+            /* 웹폰트 구글CDN (Content Dilivery Network) */
+            @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1:wght@200&family=Orbit&display=swap');
+
+            /* 웹폰트 CSS rules to specify families
+                font-family: 'Black Han Sans', sans-serif;
+                font-family: 'Gothic A1', sans-serif;
+                font-family: 'Orbit', sans-serif; 
+            */
+
+            /* CSS코딩구역 */
+            /* 
+                CSS 설정 코딩방식
+
+                선택자{
+                    속성:값;
+                }
+
+                -> 선택자는 요소명/클래스명/아이디명 등으로 사용
+
+                [ CSS 박스모델 ]
+                - 모든 html 요소는 사각형으로 되어 있고
+                가로,세로,패딩,보더,마진의 속성으로 구성됨
+                (width/hight/padding/border/margin)
+                -> 기본박스 디자인은 가로,세로 크기를 줄 경우 패딩과 보더는 박스 크기에 포함되지 않는다.
+                --> 이런 박스를 '컨텐트박스' 라고함
+
+                */
+
+            /* 공통 디자인 : 클래스를 주로 사용함! */
+            .part{
+                /* 박스모델 5가지 셋팅 */
+                /* 가로크기-기본값 auto
+                블록의 기본값은 부모박스 채우기
+                인라인의 기본값은 내용물만큼 */
+                width: 750px;
+                /* 세로크기-기본값 auto
+                모든 요소에서 기본값은 내용물만큼 */
+                /* height: 300px; */
+                height: auto;
+                border: 4px double green;
+                /* 보더 모서리 둥글게 */
+                border-radius: 20px;
+                /* 패딩
+                    padding: 수치; 
+                    (4방향 모두)
+                    padding: 수치 수치; 
+                    (위아래 양쪽)
+                    padding: 수치 수치 수치; 
+                    (위 양쪽 아래)
+                    padding: 수치 수치 수치 수치; 
+                    (위 오른쪽 아래 왼쪽)
+                */
+                padding: 10px;
+                /* 박스가 패딩,보더를 포함하는 설정 */
+                box-sizing: border-box;
+                /* box-sizing: content-box; 가 기본값 */
+                /* 마진 
+                    margin: 수치; 
+                    (4방향 모두)
+                    margin: 수치 수치; 
+                    (위아래 양쪽)
+                    margin: 수치 수치 수치; 
+                    (위 양쪽 아래)
+                    margin: 수치 수치 수치 수치; 
+                    (위 오른쪽 아래 왼쪽)
+
+                    [ 블록박스 가로방향 중앙정렬 마진설정 ]
+                    margin: 0 auto;
+
+                */
+                margin: 20px auto;
+                
+            }
+            
+            /* 메인 이미지 크기 변경하기 */
+            #main-area img{
+                width: 100%;
+            }
+
+            /* 상단영역,하단영역 공통 - 콤마(,)는 그룹선택자 */
+            header.part,footer.part{
+                /* color: red; */
+                text-align: center;
+            }
+
+            /* 상단영역 */
+            #top-area{
+                background: #d0ffec;
+            }
+            /* 하단영역 */
+            #info-area{
+                background-color: #d3d3d3;
+            }
+            /* 타이틀 폰트 */
+            .tit{
+                font-family: 'Black Han Sans', sans-serif;
+                /* 글자크기 */
+                font-size: 48px;
+                margin: 20px 0px 15px;
+            }
+            /* 메뉴 폰트 */
+            .menu{
+                font-family: 'Orbit', sans-serif; 
+            }
+            /* 하단 폰트 */
+            #info-area{
+                font-family: 'Gothic A1', sans-serif;
+            }
+            /* 주소 폰트 */
+            #info-area address{
+                font-style: normal;
+            } /* #info-area 하위 요소인 address 의 자체 폰트값이 italic으로 되어 있으므로 #info-area{} 에서 폰트스타일을 바꿔도 변화가 없기 때문에 #info-area address{} 에서 속성값을 지정해줌 */
+
+            /* 메뉴 링크 */
+            .menu a{
+                /* 글자색 */
+                color: #000;
+                /* 글자밑줄없앰 */
+                text-decoration: none;
+                /* 글자크기 */
+                font-size: 16px;
+            }
+            /* 메뉴링크 호버시 */
+            .menu a+a:hover {
+                text-decoration: overline;
+                text-decoration-style: wavy;
+                color: hotpink;
+            }
+
+            /* 
+                [ 선택자들 ]
+                1. 타입선택자 : 태그명
+                2. 아이디/클래스 선택자 : 요소이름
+                3. 종속 선택자 : 요소명+이름 (ex. h1#my header.part 등)
+                4. 자손 선택자 : 띄어쓰기
+                5. 직계자식 선택자 : 꺽쇠(>) [가독성상 띄어쓰기를 1개정도 앞뒤로 넣어주는 편]
+                6. 그룹 선택자 : 콤마(,)
+                7. 형제 선택자 : 플러스(+)
+                    예) a+a -> 앞에 a요소가 있는 a요소 선택
+                
+            */
+        </style>
     </head>
     <body>
         <!-- 1. 상단영역 : 제목, 메뉴 -->
-        <header id="top-area" class="part"></header>
+        <header id="top-area" class="part">
 
             <!-- 1-1. 타이틀 -->
             <h1 class="tit">네이버 요약뉴스</h1>
             <!-- 1-2. 메뉴 -->
             <div class="menu">
                 <a href="#">
-                    <img src="./image/logo.png" alt="네이버로고" />
+                    <img src="./image/logo.png" alt="네이버로고" style="width: 50px; vertical-align: middle;"/>
+                <!-- style 속성으로 개별 요소에 CSS를 설정할 수 있다! 이런 방식을 인라인방식 이라고 함. -->
                 </a>
                 <a href="">정치</a>
+                |
                 <a href="">경제</a>
+                |
                 <a href="">사회</a>
+                |
                 <a href="">IT/과학</a>
+                |
                 <a href="">TV/연예</a>
+                |
             </div>
-        </div>
-
+        </header>
         <!-- 2. 메인영역 : 컨텐츠 -->
-        <main id="main-area" class="part"></main>
-        
+        <main id="main-area" class="part">
+            <img src="./image/main_news.webp" alt="메인이미지" />
+
+        </main>
         <!-- 3. 하단영역 : 회사정보 -->
-        <footer id="info-area" class="part"></footer>
+        <footer id="info-area" class="part">
+            <!-- address : 주소, 전화번호, 대표자 등을 포함하는 시멘틱 태그 -->
+            <address>
+                서울시 강남구 역삼동 119 대호B 8F <br>
+                대표 : Neo Park <br>
+                전화: 010-6666-6666
+                <!-- address 태그는 기본적으로 font-style이 italic체로 되어있음 -->
+            </address>
+        </footer>
 
 
         <!-- 
+        
+        [ 이름규칙 ]
+        1. 파스칼 케이스 : JS에서
+            PascalCase -> 단어마다 대문자
+        2. 카멜 케이스 : JS에서
+            camelCase -> 첫단어를 제외하고 대문자
+        3. 스네이크 케이스 : 파일명/폴더명
+            snake_case -> 단어마다 언더바(_)
+        4. 케밥 케이스 : 요소명
+            kebap-case -> 단어사이 대쉬(-)
+
         [ 요소 명명법 ]
         1. 아이디는 #, 클래스는 . (약어로 만들기)
         2. 이름은 구체적으로 만들고 단어마다 Dash(-)를 사용함 (케밥케이스)
@@ -81,7 +251,7 @@
         5. aside : 부가정보
         6. section : 내용구분 파트
         7. article : 독립된 내용구분 파트
-        ( section / article 내부에 h1~h6 태그 사용 권고 )
+            - section / article 의 경우 w3c에서 heading 태그(h1~h6)를 내용에 사용할 것을 권고함. 안써도 무관
 
         참고) 요소와 태그는 무엇이 다른가?
         요소(element)는 공통적인 성질을 이를 때 사용
