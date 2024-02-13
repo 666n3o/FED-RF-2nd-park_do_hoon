@@ -93,14 +93,11 @@ main .article-title{
     font-size: 33px;
 }
 
-#main-area{
-    
+/* 아티클 하단부 분리 */
+.contentfooter{
+    border-top: 1px solid #000;
+    padding: 15px 0px 20px;
 }
-
-main article.contents{
-    
-}
-
 
 
 
