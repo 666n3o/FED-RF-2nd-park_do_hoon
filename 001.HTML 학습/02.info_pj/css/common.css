@@ -1,12 +1,19 @@
 /* Info PJ 공통 CSS - common.css */
 
 /* 웹폰트 구글CDN (Content Dilivery Network) */
-@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1:wght@200&family=Orbit&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1:wght@200&family=Orbit&Noto+Sans+KR:wght@100..900&display=swap");
+/* Google Font 여러개 Import 하기 위해서 &family=... 로 뒤에 추가해줬음 */
 
 /* 웹폰트 CSS rules to specify families
+
+                서브타이틀용
                 font-family: 'Black Han Sans', sans-serif;
                 font-family: 'Gothic A1', sans-serif;
                 font-family: 'Orbit', sans-serif; 
+                
+                기사본문용
+                font-family: "Noto Sans KR", sans-serif;
+
             */
 
 /* CSS코딩구역 */
@@ -71,11 +78,6 @@
 
                 */
     margin: 20px auto;
-}
-
-/* 메인 이미지 크기 변경하기 */
-#main-area img {
-    width: 100%;
 }
 
 /* 상단영역,하단영역 공통 - 콤마(,)는 그룹선택자 */

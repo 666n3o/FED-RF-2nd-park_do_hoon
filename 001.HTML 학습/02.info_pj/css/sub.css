@@ -10,7 +10,59 @@
     html의 렌더링 속도가 향상된다!
 */
 
-.sub-title{
-    font-size: 50px;
-    color: red;
+
+/* 서브페이지 타이틀 */
+h2.sub-title{
+    /* 글자색 */
+    color: #08b10ba0;
+    /*     
+    [ 색상 RGB / RGBA ]
+    color: rgb(8 177 11 0.626);
+    color: rgba(8, 177, 11, 0.626); 
+    */
+    
+    /* 글자크기 : font-size (fz) */
+    font-size: 38px;
+    /* 글자두께 : font-weight (fw) */
+    font-weight: bold; /* fwb */
+    /* 글자체 : font-family
+    - 콤마로 구분된 글자체는 대체체임
+    font-family: '긍서서','글림','돋움'; */
+    font-family: "Noto Sans KR", sans-serif; 
+    /* 텍스트 정렬 : text-align: center; (tac) 중앙정렬 */
+    text-align: center;
+    /* 글자 그림자 : text-shadow */
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
 }
+
+/* 언론사 로고 사이즈 */
+main .press-logo img{
+    width: 82px;
+    height: 32px;
+    vertical-align: top;
+}
+
+/* 기사 제목 폰트 관련 */
+main .article-title{
+    margin: 0px;
+    padding: 8px 0px 5px;
+    font-size: 33px;
+}
+
+#main-area{
+    
+}
+
+main article.contents{
+    
+}
+
+
+
+
+
+
+
+/* main .contents p:first-child{
+    padding: 0px 0px 0px 14px;
+} */
