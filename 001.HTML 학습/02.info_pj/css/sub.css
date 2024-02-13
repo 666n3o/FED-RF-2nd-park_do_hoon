@@ -12,9 +12,9 @@
 
 
 /* 서브페이지 타이틀 */
-h2.sub-title{
+h2.sub-title-it{
     /* 글자색 */
-    color: #08b10ba0;
+    color: pink;
     /*     
     [ 색상 RGB / RGBA ]
     color: rgb(8 177 11 0.626);
@@ -33,7 +33,51 @@ h2.sub-title{
     text-align: center;
     /* 글자 그림자 : text-shadow */
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    /* 
+    박스 테두리 : border (bd) : 두께 종류 색상 
+        - 두께 : 선두께
+        - 종류 : 선종류(solid 실선, dotted 점선, dashed 대쉬선, dobuled 이중선)
+    */
+    border: 4px solid rgb(255, 122, 144);
+    /* 
+    둥근모서리 : border-radius (brad)
+    */
+    border-radius: 20px;
+    /* 패딩 */
+    padding: 20px;
+    /* 배경색 : bgc */
+    background-color: pink;
+    /* 배경이미지 : bgi (개별 class 마다 따로 지정) */
+    background-image: url(../image/subtitle-bg-it.png);
+    /* 
+    배경이미지 관련 
+        - 배경고정 :
+        - 배경위치 (bgp) : background-position:
+            - center는 위치를 정중앙에 배치
+        - 배경크기 (bgz) : background-size:
+            - cover는 박스를 빈틈없이 비율 유지하여 채움
+    */
+    background-size: cover;
+    background-position: center;
+
+    /* 
+    외부 CSS에서 이미지 경로 주의!!
+    html파일이 아닌 CSS파일 위치에서 상대경로를 잡아야 이미지가 나온다!
+    */
 }
+/* sub1,2,3,5 bg */
+    .sub-title-pol{
+        background-image: url(../image/subtitle-bg-pol.png);
+    }
+    .sub-title-fin{
+        background-image: url(../image/subtitle-bg-fin.jpg);
+    }
+    .sub-title-sc{
+        background-image: url(../image/subtitle-bg-sc.jpg);
+    }
+    .sub-title-tv{
+        background-image: url(../image/subtitle-bg-tv.jpg);
+    }
 
 /* 언론사 로고 사이즈 */
 main .press-logo img{
