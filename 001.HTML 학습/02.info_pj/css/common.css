@@ -1,3 +1,8 @@
+@charset "utf-8";
+/* 맨위에 utf-8 인코딩 설정 필수 
+- 외부 CSS 파일은 파일 자체적으로 처리되므로
+인코딩형식도 따로 지정해야한다! */
+
 /* Info PJ 공통 CSS - common.css */
 
 /* 웹폰트 구글CDN (Content Dilivery Network) */
@@ -59,7 +64,7 @@
                     padding: 수치 수치 수치 수치; 
                     (위 오른쪽 아래 왼쪽)
                 */
-    padding: 10px;
+    padding: 20px 35px 35px;
     /* 박스가 패딩,보더를 포함하는 설정 */
     box-sizing: border-box;
     /* box-sizing: content-box; 가 기본값 */
@@ -101,6 +106,8 @@ footer.part {
     /* 글자크기 */
     font-size: 48px;
     margin: 20px 0px 15px;
+    text-shadow: 5px 5px 5px #88888870;
+    margin: 15px 0px 10px;
 }
 /* 메뉴 폰트 */
 .menu {

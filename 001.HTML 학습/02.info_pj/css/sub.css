@@ -1,3 +1,8 @@
+@charset "utf-8";
+/* 맨위에 utf-8 인코딩 설정 필수 
+- 외부 CSS 파일은 파일 자체적으로 처리되므로
+인코딩형식도 따로 지정해야한다! */
+
 /* Info PJ 서브페이지 CSS - sub.css */
 
 /* 공통 외부 CSS 불러오기 */
@@ -9,6 +14,12 @@
     이 방식을 채택하면 웹요청(http request)이 줄어들어
     html의 렌더링 속도가 향상된다!
 */
+
+/* 서브 페이지 글씨체 지정하기 */
+    main{
+        font-family: 'Gothic A1', sans-serif;
+    }
+
 
 
 /* 서브페이지 타이틀 */
@@ -64,6 +75,7 @@ h2.sub-title{
     외부 CSS에서 이미지 경로 주의!!
     html파일이 아닌 CSS파일 위치에서 상대경로를 잡아야 이미지가 나온다!
     */
+    margin: 10px 0 15px;
 }
 /* sub1,2,3,4,5 bg */
     .pol{
@@ -99,7 +111,7 @@ h2.sub-title{
 
 /* 언론사 로고 사이즈 */
 main .press-logo img{
-    width: 82px;
+    width: auto;
     height: 32px;
     vertical-align: top;
 }
@@ -117,9 +129,22 @@ main .article-title{
     padding: 15px 0px 20px;
 }
 
+/* 기사 이미지박스 */
+.article-image{
+    margin: 20px 0;
+}
 
+/* 기사 이미지 */
+.article-image img{
+    width: 100%;
+}
 
-
+/* 기사이미지 figcaption */
+.article-image figcaption{
+    margin: 0px 0px 20px;
+    padding: 0px 5px;
+    text-align: center;
+}
 
 
 /* main .contents p:first-child{
