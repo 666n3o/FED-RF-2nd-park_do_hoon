@@ -111,7 +111,7 @@
 
                 <!-- 유튜브 동영상 박스 -->
                 <div class="mvbox">
-                    <iframe src="https://www.youtube.com/embed/gS0GAWWmZZM" title="YouTube video player"></iframe>
+                    <iframe src="https://www.youtube.com/embed/gS0GAWWmZZM"></iframe>
                     <!-- 
                         [ iframe 요소 ]
                         - inline frame
@@ -145,7 +145,7 @@
                 </p>
 
                 <p>
-                    이 연구는 과학기술정보통신부와 교육부, 한국연구재단이 추진하는 중견연구사업 및
+                    이 연구는 <abbr title="과학기술정보통신부">과기정통부</abbr>와 교육부, 한국연구재단이 추진하는 중견연구사업 및
                     이공분야학문후속세대양성사업으로 수행됐으며, 환경과학분야 국제학술지 저널 오브 해저드스
                     머티리얼스<sub>(Journal of Hazardous Materials)</sub>에 1월 14일 온라인 게재됐다. (논문명 Evidence
                     of parental transfer of nanoplastics in pea (Pisum sativum) plants)<sup
@@ -197,6 +197,24 @@
                     ②논문명 Evidence of parental transfer of nanoplastics in pea (Pisum sativum) plants
                 </p>
             </section>
+            
+            <!-- 오늘의 작품 & 느낌 -->
+            <article class="work">
+                <h4>오늘의 작품 &amp; 느낌</h4>
+                <!-- 
+                    [ html 요소에서 특수문자 처리 ]
+                    & 엔퍼센드 &amp;
+                    < 여는꺽쇠 &lt; (lt는 less than ~ )
+                    > 닫는꺽쇠 &gt; (gt는 greater than ~ )
+                 -->
+                <figure>
+                    <img src="./image/work.webp" alt="뭉크의 절규">
+                    <figcaption>
+                        뭉크의 &lt;<cite>절규</cite>&gt;
+                    </figcaption>
+                </figure>
+
+            </article>
 
             <!-- 
                 [ Figure 요소 ]
@@ -270,7 +288,7 @@
                 - 줄임말의 원래 뜻을 표시하는 요소
                 - 필수속성 ->> title 속성 -> 툴팁으로 원래뜻을 표시
             (참고: title 툴팁속성은 어느요소든 사용가능함!)
-                - 기본디자인 : 점선 밑줄
+                - 기본디자인 : 점선 밑줄 (text-decoration: underline dotted;)
 
             4. 주소인용
             <address>

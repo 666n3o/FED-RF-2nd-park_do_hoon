@@ -279,6 +279,58 @@ main .article-title {
     height: 100%;
 }
 
+/* 기사원문 */
+.article-link a{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 1px solid darkcyan;
+    border-radius: 50%;/* 정원 */
+    /* 글자가로 중앙 */
+    text-align: center;
+    /* 줄간격을 높이값과 같이 주면 세로중앙됨! */
+    line-height: 100px;
+    font-size: 20px;
+    
+    /* a요소 기본 글자색변경, 밑줄없앰 */
+    color: #222;
+    text-decoration: none;
+    background-color: #ccc;
+}
+.article-link{
+    text-align: right;
+}
+.article-link a:hover{
+    color: hotpink;
+    background-color: aquamarine;
+    box-shadow: 0 0 10px 5px darkblue;
+}
+
+.work{
+    text-align: center;
+    /* [ 선형 그라데이션 : linear-gradient ] 
+        linear-gradient(방향,색1,색2,...);
+        linear-gradient(방향,색1 몇%,색2 몇%,...);
+        linear-gradient(각도,색1 몇%,색2 몇%,...);
+        - 옵션 :
+        1. 방향 : to top, to bottom, to left, to right
+        2. 각도 : 각도deg
+        3. 콤마로 나열된 색상 뒤에 %수치를 쓰면 비율조정 가능
+    */
+    background-image: linear-gradient(45deg, red, blue, yellow);
+}
+.work h4{
+    font-family: "Black And White Picture", system-ui;
+    font-weight: normal;
+    font-size: 28px;
+}
+.work img{
+    
+}
+.work figcaption{
+
+}
+
 
 /* main .contents p:first-child{
     padding: 0px 0px 0px 14px;
