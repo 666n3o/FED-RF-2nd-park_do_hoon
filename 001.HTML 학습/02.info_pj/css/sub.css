@@ -191,16 +191,16 @@ main .article-title {
     font-weight: bold;
 }
 
-/* 인용구 박스 */
-.quote-box{
+/* 구분 박스 */
+.bd-box{
     border-top: 2px dashed #ccc;
     border-bottom: 2px dashed #ccc;
     padding-top: 15px;
     margin: 10px 0;
 }
 
-/* 인용구 제목  */
-.quote-box h4{
+/* 구분박스 제목  */
+.bd-box h4{
     /* 기본 display가 block 이므로
     글씨만큼 크기를 가지려면 inline-block 으로 바꿔야한다 */
     display: inline-block;
@@ -225,7 +225,7 @@ main .article-title {
     background-color: #ebebeb;
 }
 
-.quote-box img{
+.bd-box img{
     /* 기본적으로 이미지는 인라인 요소이며
     글자가 왼쪽으로 한줄 하단에 나열됨
     글자가 옆에 올라와서 흘러가게 하려면
@@ -245,7 +245,7 @@ main .article-title {
     /* 넘치는 자식요소 숨기는 설정때문에 그림자가 잘리므로 이를 패딩으로 처리함 */
 }
 
-.quote-box blockquote{
+.bd-box blockquote{
     font-size: 15px;
     line-height: 2.2;
     text-align: justify;
@@ -256,6 +256,29 @@ main .article-title {
     /* text-align: justify (taj) 는 텍스트 우측라인도 왼쪽과 같이 일자로 정렬 */
     /* margin-bottom: 20px; */
 }
+
+/* 동영상 박스 : 유튜브 iframe */
+.mvbox{
+    /* 
+        비율유지 박스설정 
+        aspect-ratio: 가로비/세로비;
+        -> 주의: 가로 세로가 유동적이므로 특정값을 셋팅하지 말것!
+    */
+        aspect-ratio: 16/9;
+    /* height: 550px; */
+    /* 
+        div와 같은 block 요소는
+        width 설정을 하지 않으면
+        width : auto;
+    */
+}
+/* iframe */
+.mvbox iframe{
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
 
 /* main .contents p:first-child{
     padding: 0px 0px 0px 14px;
