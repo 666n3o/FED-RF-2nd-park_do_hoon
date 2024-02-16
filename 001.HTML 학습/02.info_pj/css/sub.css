@@ -317,20 +317,67 @@ main .article-title {
         2. 각도 : 각도deg
         3. 콤마로 나열된 색상 뒤에 %수치를 쓰면 비율조정 가능
     */
-    background-image: linear-gradient(45deg, red, blue, yellow);
+    background-image: linear-gradient(45deg, rgb(255, 164, 164) 5%, rgb(148, 148, 255) 50%, rgb(139, 255, 153));
+    
+    padding: 20px;
+    /* 
+        부모박스에 패딩이 없는 상태에서 첫번째 자식 블록박스의 마진은
+        부모 바깥쪽으로 나가서 셋팅된다!
+        이유는 마진은 바깥쪽으로 셋팅하는 개념이고
+        부모가 이를 셋팅하지 않았다면
+        첫번째 블록박스에서 마진을 셋팅할 수 있도록 기본설계 되어 있다!
+            -> 패딩을 주는 순간 자식의 마진은 패딩의 내부공간을 밀게된다!
+    */
+    border: 10px dotted black;
+
+    /* background-clip: border-box; */
+    /* 
+        [ 배경관련 표시 영역지정 : background-clip ] 
+            값 : border-box 보더 영역까지 표시 (Default)
+            값 : padding-box 패딩 영역까지 표시
+            값 : content-box 내용 영역까지 표시
+    */
+    background-origin: padding-box;
+    /* 
+        [ 배경관련 시작 영역지정 : background-origin ]
+            값 : border-box 보더 영역부터 시작
+            값 : padding-box 패딩 영역부터 시작 (Default)
+            값 : content-box 내용 영역부터 시작
+            */
+
+    /* 배경 반복 제거 */
+    background-repeat: no-repeat;
+    /* 박스 내부 그림자 */
+    box-shadow: inset 0 0 5px #333;
+
 }
 .work h4{
     font-family: "Black And White Picture", system-ui;
     font-weight: normal;
     font-size: 28px;
+ /*    padding-top: 20px; */
+    margin: 0;
+    /* 부모에 패딩없는 상태에서 첫번째 자식마진은 부모바깥으로 나감!
+        참고) 마지막 자식블록요소도 부모 박스 하단 마진은 바깥으로 나감! */
 }
 .work img{
-    
+    width: 250px;
+    border: 10px ridge goldenrod;
+    border-radius: 10px;
 }
 .work figcaption{
-
+    font-size: 20px;
+    margin-top: 10px;
+    font-family: "Gugi", sans-serif;
 }
 
+/* 작품명 인용구 */
+.work cite{
+    /* 이탤릭해제 */
+    font-style: normal;
+    /* 글자색 */
+    color: darkmagenta;
+}
 
 /* main .contents p:first-child{
     padding: 0px 0px 0px 14px;

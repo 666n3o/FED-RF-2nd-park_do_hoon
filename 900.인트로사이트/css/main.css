@@ -1,29 +1,63 @@
 @charset "utf-8";
 /* 인트로 사이트 메인 CSS - main.css */
 
+/* 스크롤 애니메이션 셋팅 */
+html {
+    scroll-behavior: smooth;
+    /* html 즉, Root에 부드러운 scroll 설정을 하면 이동시 스크롤 애니메이션이 연출된다. */
+}
 
-html,body{
+/* 마진,패딩 초기화 */
+html,
+body,
+h1,
+h2,
+h3,
+p {
+    margin: 0;
     padding: 0;
-    border: 0;
+}
+
+/* 높이값 보이는 화면 기준 채우기 */
+html,
+body,
+.page {
     height: 100%;
 }
-body{
-    background-image: linear-gradient(to bottom,rgb(205,255,227),rgb(247, 206, 255))
+
+/* BG */
+body {
+    background:
+    url(../images/bg.avif) no-repeat fixed center/cover;
 }
-/* 
+
+/*****************************************************************
+   [ 선형 그라데이션 ]
     background-image:
     linear-gradient(방향,색1,색2,색3,...)
     - 방향 : to top, top left, to right, to bottom
-*/
-.wrap{
+*****************************************************************/
+
+/* 메뉴박스 */
+.menu {
+    width: 700px;
+    margin: 0 auto;
+    background-color: rgba(135, 206, 250, 0.6);
+    padding: 15px;
+}
+
+/* 메뉴 하위 h1,h2 옆으로 흐르게 display 변경하기 */
+.menu > * {
+    display: inline-block;
+}
+
+/* 컨텐츠박스 */
+.link-box {
     border: 2px dashed darkblue;
     border-radius: 20px;
     width: 600px;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
-}
-
-.wrap sup{
-    font-size: 10px;
+    background: #ffffff6e;
 }
