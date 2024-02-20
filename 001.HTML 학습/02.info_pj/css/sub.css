@@ -382,3 +382,135 @@ main .article-title {
 /* main .contents p:first-child{
     padding: 0px 0px 0px 14px;
 } */
+
+/* 뉴스파트 공통 클래스 */
+.news-box{
+    border-top: 2px dashed #ccc;
+    margin: 20px 0;
+    padding: 20px 0;
+}
+/* 뉴스파트 공통a요소 */
+.news-box a{
+    font-size: 17px;
+    line-height: 2.5;
+    color: #222;
+    text-decoration: none;
+}
+/* 공통a요소 호버시 */
+.news-box a:hover{
+    color: yellowgreen;
+    text-shadow: 1px 1px 1px #000;
+}
+/* 뉴스 타이틀 공통 */
+.news-box h3{
+    font-family: "Black And White Picture", system-ui;
+    font-weight: normal;
+    font-size: 30px;
+    background-image: linear-gradient(to right,lightblue,transparent);
+    padding: 10px;
+}
+
+/* 주요뉴스 ul 변경하기 */
+.main-news ul,.news-box ol{
+    /* 기본리스트 숨기기 */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+/* 주요뉴스에 가상요소로 아이콘 넣기 */
+.main-news ul li::before{
+    content: '😀';
+}
+.main-news ul li::after{
+    content: '😻';
+    /* content: url(../images/logo.png); */
+}
+
+/* 
+    [ CSS의 가상요소 : before, after ]
+    - 모든 요소는 맨앞과 맨뒤에 가상요소를 사용할 수 있다!
+    - 가상요소 표기법은 요소명 뒤에 콜론2개를 겹쳐씀 (::)
+    - 맨앞은 before, 맨뒤는 after
+    - 필수속성 : content
+    - 이미지는 content 속성값으로 url() 사용
+*/
+
+/* 뉴스 공통 말줄임표시 넣기 */
+.news-box li {
+    /* 
+    기본적으로 블록박스는 내용이 넘치면 줄바꿈이 되는 랩핑박스가 기본
+    줄바꿈 방지하는 속성은
+    white-space:nowrap;
+    (기본값은 normal)
+    */
+    /* 1. 줄바꿈방지 */
+    white-space: nowrap;
+    /* 2. 넘치는 내용 숨기기 */
+    overflow: hidden;
+    /* 3. 넘치는 텍스트 말줄임표(입.립스...) */
+    text-overflow: ellipsis;
+}
+
+/* 주요뉴스 li의 가상클래스를 사용한 선택법
+    [ 같은종류의 자식요소일 경우 선택법 ]
+    :first-child -> 첫번째 자식
+    :last-child -> 마지막 자식
+    :nth-child(n) -> n번째 자식(n은 1부터)
+*/
+.main-news li:first-child a{
+    color: red;
+}
+.main-news li:nth-child(2) a{
+    color: blue;
+}
+.main-news li:last-child a{
+    color: green;
+}
+
+/* 분야별 뉴스 dl */
+.sec-news dl{
+    margin: 0;
+}
+/* 분야별 뉴스 dt */
+.sec-news dt{
+    font-family: "Gugi", sans-serif;
+    font-size: 20px;
+    border: 4px dashed darkcyan;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 50%;
+}
+/* 분야별 뉴스 dd 가상요소 아이콘넣기 */
+.sec-news dd::before{
+    content: '🏳‍🌈';
+}
+/* 분야별 뉴스 dt의 가상클래스를 사용한 선택법
+    [ 2가지 이상의 종류의 자식요소가 있을 경우 선택법 ]
+    :first-of-type -> 같은 타입(요소) 중 첫번째
+    :last-of-type -> 같은 타입(요소) 중 마지막
+    :nth-of-type(n) -> 같은 타입(요소) 중 n번째 (n은 1부터)
+*/
+/* 분야별뉴스 dt별 글자색, 배경색 변경 */
+/* 경제 */
+.sec-news dt:first-of-type{
+    color: red;
+    background-color: lightgreen;
+    border-color: yellowgreen;
+}
+/* 사회 */
+.sec-news dt:nth-of-type(2){
+    color: blue;
+    background-color: lightcoral;
+    border-color: darkmagenta;
+}
+/* TV/연예 */
+.sec-news dt:last-of-type{
+    color: green;
+    background-color: lightskyblue;
+    border-color: darkorchid;
+}
+
+/* 첫번째 dt를 제외한 나머지 dt의 마진탑 주기 */
+.sec-news dd+dt{
+    margin-top: 40px;
+}
