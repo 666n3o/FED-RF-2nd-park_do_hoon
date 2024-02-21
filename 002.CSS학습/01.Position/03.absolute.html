@@ -68,6 +68,8 @@
         #r2{
             position: relative; /* por */
             background: url(./images/ab4.jpg) no-repeat center/cover;
+            top: 100px;
+            left: 100px;
         }
         #s1{
             background-color: lightcoral;
@@ -110,6 +112,46 @@
             background: url(./images/ab1.jpg) no-repeat center/cover;
         }
 
+        /*  
+            .a3는 위치 이동값이 없으므로
+            젠틀하다!! -> 싸고 있는 박스안에 패딩과 글자 다음에 위치하여
+            가만히 있는다.
+        */
+
+        /* .a4는 위치이동값을 사용하자! -> 부모찾아 삼만리 */
+        
+
+        .a4{
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 50%;
+            /* 앱솔루트요소 크기를 %로 주면 부모자격박스를 기준한다! */
+        }
+
+        .spabs{
+            position: absolute;
+            right: 0;            
+            bottom: 0;
+        }
+        /* 앱솔루트 : 판타롱스타킹! */
+        .a5
+        {
+            position: absolute;
+            /* 박스크기를 안준 앱솔루트는 그 크기가 내용만큼 늘어난다. */
+            top: 20%;
+            right: 10%;
+            /* 부모는? 보이는 화면! */
+            outline: 2px solid red;
+            /* 
+                outline은 보더와 유사하지만
+                보더는 박스 크기에 영향을 주는
+                필수 구성요소지만 다른 영향이 전혀없는
+                외곽선만 표시하는 속성이다.
+                outline: 두께 종류 색상 (보더와 같음)
+            */
+        }
+
     </style>
 </head>
 <body>
@@ -120,6 +162,12 @@
     <div class="bx" id="r2">r2</div>
     <div class="bx" id="s2">s2</div>
     <div class="bx" id="a2">a2</div>
+
+    <!-- 앱솔루트 : 판타롱스타킹! -->
+    <div class="a5" title="앱솔루트 판타롱스타킹">
+        <img src="./images/ab2.jpg" alt="타노스">
+    </div>
+
     <!-- 부모를 찾는 앱솔루트! -->
     <div class="bx2 s5">s5
         <div class="bx2 s6">s6
@@ -131,6 +179,7 @@
                     title="나는 부모찾아 올라간다!">a4</div>
                     <span class="spabs" title="자동블록전환!!!">
                         나는 span앱솔루트다!
+                        <!-- inline 요소를 앱솔루트 포지션으로 전환시키면 알아서 디스플레이가 block 형태로 전환된다 -->
                     </span>
                 </div>
             </div>
