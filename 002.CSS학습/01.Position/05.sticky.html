@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>04. fixed 포지션</title>
+    <title>05. sticky 포지션</title>
     <style>
         .bx{
             width: 300px;
@@ -13,6 +13,41 @@
             font-weight: bold;/* fwb */
             /* 글자세로중앙 */
             line-height: 300px;
+        }
+
+        /* sticky 박스 */
+        .stkbx{
+            position: sticky;
+            /***************************************************** 
+                [ 5. sticky 포지션 ]
+
+                1. 위치값 top 설정에 따라 화면에 고정되는 포지션이다!
+                
+                2. 고정되는 원리:
+                처음에는 relative(left값 적용됨!) 하게 가만히
+                현재위치를 점유하고 있음
+                top값을 셋팅한 경우 보이는 화면 상단 위치로부터 스티키
+                요소가 위치하게 되면 fixed로 위치를 고정하여 화면에서
+                사라지지 않도록 변경한다!
+
+                3. sticky 적용구간
+
+            *****************************************************/
+            
+            /* 위치이동값이 적용되나? */
+            top: 100px;
+            left: 100px;
+
+            width: 50%;
+            text-align: center;
+            font-size: 30px;
+            padding: 50px;
+            background-color: lightblue;
+            border: 5px dotted blue;
+            z-index: 9999999999;
+        }
+        .wrap-stk{
+            height: 500px;
         }
 
         /* 첫번째 fixed 요소 */
@@ -313,12 +348,20 @@
             font-size: 30px;
         }
 
+        
     </style>
 </head>
 <body>
    
     <div class="bx" id="r1">r1</div>
     <div class="bx" id="s1">s1</div>
+
+    <div class="wrap-stk">
+    <!-- 스티키 포지션 박스 -->
+        <div class="stkbx">
+            나는 sticky다! 사라지지 않아!
+        </div>
+    </div>
     <div class="bx" id="f1">나는 젠틀픽스드다.</div>
     <div class="bx" id="f2">나는 보이는화면을 기준한다!</div>
     <div class="bx" id="a1" title="나는 젠틀앱솔루트다">a1</div>
