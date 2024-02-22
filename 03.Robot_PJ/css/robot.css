@@ -1,0 +1,205 @@
+@charset "utf-8";
+
+/* Robot PJ 메인 CSS - robot.css */
+
+/* 웹폰트 CDN */
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Black+Ops+One&family=Chakra+Petch&family=Orbitron:wght@500&display=swap');
+
+/* 
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Black Ops One', cursive;
+    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Orbitron', sans-serif;
+*/
+
+/* ********************************************************************************* */
+
+/* 초기화 : 마진0, 패딩0 */
+html,body,h1,h2,h3,ul,ol{
+    margin: 0;
+    padding: 0;
+}
+
+/* 전체 배경이미지 */
+body{
+    background: url(../images/bg.jpg) no-repeat fixed top/cover;
+}
+
+/* 공사중 표시 */
+body * {
+    outline: 2px dashed yellow;
+}
+
+/****************************** 공통 클래스 ******************************/
+/* 메탈배경 클래스 */
+.metal1{
+    background: url(../images/metal01.jpg) no-repeat center/cover;
+}
+.metal2{
+    background: url(../images/metal02.jpg) no-repeat center/cover;
+}
+
+/****************************** 1. 상단영역 ******************************/
+
+
+/****************************** 2. 메인영역 ******************************/
+/***** 2-1. 로봇박스 *****/
+.robot-box{
+
+}
+
+/***** 2-1-1. 로봇머리 *****/
+.head{
+    /* 부모자격 */
+    position: relative;
+    width: 250px;
+    height: 250px;
+    /* 특정크기를 가지는 블록요소를 가로중앙으로 이동하기 */
+    margin: 0 auto;
+    /* 모서리 라운드처리 (왼쪽위부터 시계방향 수치입력) */
+    border-radius: 40% 40% 80% 80%;
+}
+
+/* 눈공통 */
+.eye{
+    position: absolute; /* 부모는 .head */
+    /* 크기공통 */
+    width: 50px;
+    height: 50px;
+    top: 50px;
+    /* 배경공통 */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: #fff;
+    /* 둥근눈 */
+    border-radius: 50%;
+    /* 이중테두리 */
+    border: 4px double #000;
+}
+/* 왼눈 */
+.eye1{
+    background-image: url(../images/e1.jpg);
+    left: 50px;
+}
+/* 오른눈 */
+.eye2{
+    background-image: url(../images/e2.jpg);
+    right: 50px;
+}
+
+/* 코 */
+.nose{
+    position: absolute;
+    background: url(../images/nose.jpg) no-repeat -7px -6px/cover;
+    width: 50px;
+    height: 70px;
+    top: calc(50% - 30px);
+    left: calc(50% - 25px);
+    border-radius: 40%;
+    background-color: #fff;
+}
+
+/* 입 */
+.mouth{
+    position: absolute;
+    background: url(../images/mouth.png) no-repeat 0px 0px/cover;
+    width: 96px;
+    height: 51px;
+    top: 170px;
+    left: 77px;
+}
+
+/* 귀공통 */
+.ear{
+    position: absolute;
+    width: 55px;
+    height: 80px;
+    top: 80px;
+}
+
+/* 왼귀 */
+.ear1{
+    left: -55px;
+    border-radius: 80% 50% 40% 90%;
+}
+/* 오른귀 */
+.ear2{
+    right: -55px;
+    border-radius: 50% 80% 90% 40%;
+}
+
+/***** 2-1-2. 몸통 *****/
+.body{
+    /* 부모자격 */
+    position: relative;
+    width: 220px;
+    height: 400px;
+    margin: 0 auto;
+    /* 배경이미지 조정 */
+    margin-top: 50px;
+    background-repeat: repeat;
+    background-size: 50%;
+}
+
+/* 목 */
+.neck{
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px/2); /* 가로/세로 중앙 보내기 calc(50% - 크기/2) */
+    width: 50px;
+    height: 50px;
+}
+
+/* 팔공통 */
+.arm{
+    
+    position: absolute; /* 부모는 .body */
+    top: 0;
+    width: 50px;
+    height: 200px;
+}
+/* 팔하단공통 */
+.arm span{
+    position: absolute; /* 부모는 .arm */
+    width: 80%; /* 부모인 .arm 의 크기를 조정할 때 같이 줄어들게 하기위해 %로 수치입력 */
+    height: 80%;
+    top: 100%;
+    left: calc(50% - 80%/2)
+}
+/* 왼팔 */
+.arm1{
+    left: -50px;
+}
+/* 오른팔 */
+.arm2{
+    right: -50px;
+}
+
+/* 다리공통 */
+.leg{
+    
+    position: absolute; /* 부모는 .body */
+    top: 100%;
+    width: 80px;
+    height: 200px;
+}
+/* 팔하단공통 */
+.leg span{
+    position: absolute; /* 부모는 .leg */
+    width: 80%; /* 부모인 .leg 의 크기를 조정할 때 같이 줄어들게 하기위해 %로 수치입력 */
+    height: 80%;
+    top: 100%;
+    left: calc(50% - 80%/2)
+}
+/* 왼팔 */
+.leg1{
+    left: 0px;
+}
+/* 오른팔 */
+.leg2{
+    right: 0px;
+}
+
+
+
+/****************************** 3. 하단영역 ******************************/
