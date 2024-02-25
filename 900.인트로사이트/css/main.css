@@ -25,7 +25,7 @@ ul,ol{
 /****** Top Area ******/
 .top-area{
     position: fixed;
-    background-color: #000000;
+    background-image: linear-gradient(to bottom,#000 90%,transparent);
     top: 0;
     width: 100%;
     padding: 20px 0;
@@ -43,7 +43,7 @@ ul,ol{
 .logo img:hover{
     transform: scale(1.25);
 }
-.logo {
+.logo{
     text-align: center;
 }
 
@@ -78,26 +78,71 @@ ul,ol{
 /* hover */
 .menu a:hover{
     text-decoration: underline;
-    text-decoration-color: hotpink;
-    color: hotpink;
-    font-size: 120%;
+    text-decoration-color: red;
+    color: red;
+    font-size: 115%;
 }
 
 /****** Background ******/
+body{
+    background-color: #000;
+}
 #pg1{
-    background: url(../images/bg1.jpg) no-repeat fixed center/cover;
+   background-image: linear-gradient(
+    to right,
+    rgba(0,0,0,0) 15%,
+    rgba(0,0,0,0.5) 20%,
+    rgba(0,0,0,0.7) 25%,
+    rgba(0,0,0,1) 30%,
+    rgba(0,0,0,1) 45%,
+    rgba(0,0,0,1) 50%
+    ),
+    url(../images/bg1.jpg)
+    ;
+background-repeat: no-repeat;
+background-size: contain;
+background-position: left;
+border-radius: 30px;
+
 }
 #pg2{
-    background: url(../images/bg2.jpg) no-repeat fixed center/cover;
+    background-image: linear-gradient(
+        to left,
+        rgba(0,0,0,0) 15%,
+        rgba(0,0,0,0.5) 20%,
+        rgba(0,0,0,0.7) 25%,
+        rgba(0,0,0,1) 30%,
+        rgba(0,0,0,1) 45%,
+        rgba(0,0,0,1) 50%
+        ),
+        url(../images/bg2.jpg)
+        ;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    border-radius: 30px;
 }   
 #pg3{
-    background: url(../images/bg1.jpeg) no-repeat fixed center/cover;
+    background-image: linear-gradient(
+        to top,
+        rgba(0,0,0,0) 20%,
+        rgba(0,0,0,0.5) 30%,
+        rgba(0,0,0,0.7) 40%,
+        rgba(0,0,0,1) 70%,
+        rgba(0,0,0,1) 70%,
+        rgba(0,0,0,1) 80%
+        ),
+        url(../images/bg3.webp)
+        ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right 150px;
 }   
 
 /****** Link Box ******/
 .link-box{
     position: relative;
-    top: 33%;
+    top: 25%;
     
     border: 2px groove white;
     border-radius: 20px;
@@ -106,4 +151,36 @@ ul,ol{
     padding: 20px;
     text-align: center;
     background-color: rgba(128, 128, 128, 0.2);
+    line-height: 40px;
 }
+
+/* Link Box Title */
+.lb-title{
+    font-size: 30px;
+    color: rgb(227, 16, 16);
+    margin: 10px 0 15px 0;
+}
+/* Link Box P */
+.link-box p a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.1s linear;
+}
+/* Link Box P Hover */
+.link-box p a:hover{
+    text-decoration: red underline;
+    color: red;
+}
+
+/****** Bottom Area ******/
+/* footer{
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    height: 100px;
+} */
+
+/* Body height를 100%로 줘도 왜 overflow 되는지 이유를 모르겠음.. */
